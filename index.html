@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" ng-app="pokemonApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- bootstrap css -->
+  <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <!-- angular -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-resource.min.js"></script>
+
+  <!-- custom script -->
+  <script src="app.js"></script>
+</head>
+<body ng-controller="PokemonsCtrl">
+
+  <div class="container">
+    <div class="row">
+      <div class=".col-xs-* .col-md-*">
+        <div class="col-sm-* text-left">
+        <img alt="" class="img-responsive" src="images/hero-background.jpg">
+
+                    <div class="caption">
+                        <h4>Pokemon Gallery</h4>
+                    </div>
+        </div>
+
+        <!-- show all pokemons -->
+        <div ng-repeat="pokemon in pokemons">
+          <div class="row">
+            <div class=".col-xs-* .col-md-*">
+             <img ng-src="{{pokemon.photo_url}}" class="img-responsive">
+             <!--<img src="images/{{pokemon.ndex.substring(2,2)+1}}.png" class="img-responsive">-->
+            </div>
+            <div class="col-xs-8">
+
+              <!-- pokemon content -->
+              <!--<div ng-hide="pokemon.editForm">-->
+              <div>
+                <h5>{{pokemon.name}}</h5>
+                <p><strong>number:</strong> {{pokemon.ndex}}</p>
+              </div>
+            </div>
+          </div>
+          <hr>
+        </div>
+        <!-- end ng-repeat -->
+      </div>
+    </div>
+  </div>
+
+
+</body>
+</html>
